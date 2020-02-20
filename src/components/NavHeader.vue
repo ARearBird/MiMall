@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div>NavHeader</div>
 </template>
 <script>
     export default{

@@ -7,6 +7,6 @@ Vue.config.productionTip = false
 
 new Vue({
   store,
-  router,
+  router,   // 当Key和Value一样时，就可以省略Value值。"router:router"
   render: h => h(App)
 }).$mount('#app')

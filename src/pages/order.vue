@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-    export default(
+    export default{
         name:'order'
-    )
-<script>
+    }
+</script>
