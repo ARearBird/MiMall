@@ -11,6 +11,7 @@ import Order from './../pages/order'
 import OrderConfirm from './../pages/orderConfirm'
 import OrderList from './../pages/orderList'
 import OrderPay from './../pages/orderPay'
+import AliPay from './../pages/alipay'
 
 // 加载插件的固定语法
 Vue.use(Router);
@@ -21,8 +22,8 @@ export default new Router({
     routes:[
         // 定义一个路由：首页、产品站、产品详情 
         {
-            path: '/',   // 加载父路由
-            name: 'home',
+            path: '/',
+            name: 'home',   // 有相似的部分可以抽取成一个父路由进行复用
             component: Home,
             redirect: '/index',  // 重定向到 ‘/index’ 里面去
             children:[
@@ -41,7 +42,7 @@ export default new Router({
                 }
             ]
         }, 
-        // 定义一个路由：购物车
+        // 定义一个路由：购物车。单独引用
         {
             path: '/cart',
             name: 'cart',
@@ -54,17 +55,21 @@ export default new Router({
             component: Order,
             children:[
                 {
-                    path: '/confirm',
+                    path: 'confirm',
                     name: 'order-confirm',
                     component: OrderConfirm
                 }, {
-                    path: '/list',
+                    path: 'list',
                     name: 'order-list',
                     component: OrderList
                 }, {
-                    path: '/pay',
+                    path: 'pay',
                     name: 'order-pay',
                     component: OrderPay
+                }, {
+                    path: 'alipay',
+                    name: 'alipay',
+                    component: AliPay
                 }
             ]
         }
