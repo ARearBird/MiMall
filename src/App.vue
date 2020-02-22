@@ -4,7 +4,28 @@
   </div>
 </template>
 
-<script></script>
+<script>
+// 当导入文件下面只有一个的时候最下面的文件可以省略，如省略 ‘/index’
+// import storage from './storage/index'
+export default {
+  name: 'app',
+    components: {
+
+  },
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    // storage.setItem('a',1);
+    // storage.setItem('user',{a:{b:1}})
+    // storage.setItem('xz', 10, 'user')
+    // storage.clear('a')
+    // storage.clear('a', 'user');
+  }
+}
+</script>
 
 <style>
 #app {
