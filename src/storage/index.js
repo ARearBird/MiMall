@@ -35,6 +35,8 @@ export default {
     clear(key, module_name) {
         let val = this.getStorage();
         if (module_name) {
+            // 代码的健壮性
+            if (!val[module_name]) return;
             delete val[module_name][key];
         } else {
             delete val[key];
