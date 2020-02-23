@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-
+      res: {}
     }
   },
   mounted() {
@@ -23,6 +23,11 @@ export default {
     // storage.setItem('xz', 10, 'user')
     // storage.clear('a')
     // storage.clear('a', 'user');
+  
+    this.axios.get('/user/login').then((res)=>{
+      this.res = res;
+    });
+
   }
 }
 </script>

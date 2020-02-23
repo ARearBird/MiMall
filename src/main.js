@@ -4,16 +4,28 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios' 
 import App from './App.vue'
-import env from './env'
+// import env from './env'
 // 是靠路径前面的 './' 来区分是不是插件的；如果没有 './' 则认为是一个插件！！
 // 一个好的习惯：把插件放在上面，把主件放在下面
+
+/**
+ * import 和 require 的区别：
+ * import 是预编译加载，在编译的时候，import文件就会被加载进来，就被写入到内存当中。
+ * require是在执行的时候加载。当mock是false的时候是不会被加载的。
+ */
+// mock开关
+const mock = true;
+if (mock) {
+  require('./mock/api');
+}
+
 
 // 根据前端的跨域方式做调整。这里是按照接口代理的方式
 axios.defaults.baseURL = '/api';  // 前后端分离的项目，按照江湖规矩：习惯叫 /api
 // 设置超时时间为 8s
 axios.defaults.timeout = 8000;
 // 根据环境变量来获取不同的请求地址(CORS跨域)
-axios.defaults.baseURL = env.baseURL;
+// axios.defaults.baseURL = env.baseURL;
 
 
 // 接口错误拦截
