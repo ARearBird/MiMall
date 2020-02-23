@@ -28,7 +28,7 @@ export default new Router({
             redirect: '/index',  // 重定向到 ‘/index’ 里面去
             children:[
                 {
-                    path: '/index',
+                    path: '/index', // 首页
                     name: 'index',
                     component: Index
                 }, {
