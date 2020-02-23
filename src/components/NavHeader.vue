@@ -1,5 +1,7 @@
 <template>
-    <div>NavHeader</div>
+    <div>
+        
+    </div>
 </template>
 <script>
     export default{
